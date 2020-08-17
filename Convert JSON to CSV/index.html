@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+        <title>JSV TO CSV</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+        <link rel="manifest" href="img/site.webmanifest">
+        <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="stylesheet" href="css/alerts-css.css">
+        <link href="css/style.css" type="text/css" rel="stylesheet" />
+        <link href="css/tooltips.css" type="text/css" rel="stylesheet"/>
+        <script src="https://kit.fontawesome.com/89bbd3450e.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+       
+
+
+        <div id="container" class="d-flex j-content-center">
+            <div class="row">
+              <div class="col">
+              
+              </div>
+              <div class="col">
+         
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+            
+              </div>
+              <div class="col">
+                <div id="content">
+                    <div class="d-flex j-content-center tile text-tile">
+                        <!-- BOX FOR THE TEXT -->
+                        <textarea name="input-text" id="inputText" class="input-text" placeholder="Arquivo ou texto: JSON ou CSV... "></textarea>
+                    </div>
+                    <!-- BUTTON FOR UPLOAD FILE -->
+                    <div onclick="handleUploadButton()" class="d-flex tile input-file-tile">
+                        <input type="file" name="file-input" id="fileInput" class="d-none">
+                        <i class="fas fa-uploud"></i>
+                        <p id="inputFileLabel">INSERIR ARQUIVO!</p>
+                    </div>
+                </div>
+                <!-- CONVERT SIDE -->
+                 <!-- BUTTON FOR CSV WITH NAME -->
+                <div id="convertContainer" class="d-flex j-content-center">
+                    <span class="tooltip right" data-tip="JSON to CSV" tabindex="1">
+                        <button onclick="handleConvert('csv')" id="convertOption1" class="d-flex mini-tile convert-option">
+                            <i class="fas fa-chevron-circle-right"></i>CSV
+                        </button>
+                    </span>
+                    <!-- BUTTON FOR JSON WITH NAME -->
+                    <span class="tooltip right" data-tip="CSV to JSON" tabindex="1">
+                        <button onclick="handleConvert('json')" id="convertOption2" class="d-flex mini-tile convert-option">
+                            <i class="fas fa-chevron-circle-right"></i>JSON
+                        </button>
+                    </span>
+                </div>
+              </div>
+              <div class="col">
+                <div id="content">
+                    <div class="d-flex j-content-center tile output-tile text-tile">
+                        <!-- OUTPUT TEXT -->
+                        <textarea class="input-text d-none" name="input-text" id="outputText" readonly></textarea>
+                        <span id="emptyOutputIcon"><i class="fas fa-align-left"></i></span>
+                    </div>
+                    <div class="d-flex option-tile">
+                        <span class="tooltip top" data-tip="Save" tabindex="1">
+                            <button onclick="handleSaveFile()" class="mini-tile output-option">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </span>
+                        <span class="tooltip top" data-tip="Clear all" tabindex="1">
+                            <button onclick="clearFields({clearInputText: true})" class="mini-tile output-option">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </span>
+                        <span class="tooltip top" data-tip="Copy" tabindex="1">
+                            <button onclick="handleCopyToClipboard()" class="mini-tile output-option">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+
+        <!-- ALERT -->
+        <div class="fixed-alerts fixed-alerts_top fixed-alerts_left">
+            <div id="aletElement" class="alert alert_none" style="animation-delay: .1s">
+                <div class="alert--icon">
+                    <i id="alertIcon" class="fas fa-exclamation-circle"></i>
+                </div>
+                <div id="alertContent" class="alert--content">
+                </div>
+                <div class="alert--close">
+                    <i class="far fa-times-circle"></i>
+                </div>
+            </div>
+        </div>
+      
+          
+          
+        <!-- MY GITHUB -->
+        <footer class="d-flex j-content-center">
+            <a href="https://github.com/alysonvale/webProjects.git">
+              <i class="fab fa-github"></i>
+            </a>
+            <p>Made with by Alyson Vale</p>
+        </footer>
+
+        <!-- SCRIPTS FOR JS -->
+        <!-- <script src="js/FileSaver.min.js"></script> -->
+        <script src="js/validators.js"></script>
+        <script src="js/converters.JS"></script>
+        <script src="js/index.js"></script>
+        <script src="js/alerts.js"></script>
+
+    </body>
+
+
+</html>

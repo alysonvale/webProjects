@@ -1,0 +1,17 @@
+HTML
+index.html OK
+
+JS
+index.js OK
+FileSaver.mim.js OK
+alerts.js OK
+converters.js OK
+validators.js OK
+
+CSS
+style.css OK
+alerts-css.css OK
+tooltips.css OK
+
+IMG
+imgs for style.css and settings gives imgs OK
